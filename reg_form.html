@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <button class="btn-toggle">Изменить тему</button>
+        <h1>REGISTRATION FORM</h1>
+        <form class="my-form" action="/reg-data" method="post">
+            <div class="form-input">
+                <label for="username">Username</label>
+                <input id="username" class="username" type="text" placeholder="Username" name="username" minlength="3" maxlength="20" required>
+            </div>
+
+            <div class="form-input">
+                <label for="email">E-mail</label>
+                <input id="email" class="email" type="email" placeholder="E-Mail" name="email" required>
+            </div>
+
+            <div class="form-input">
+                <label for="password">Password</label>
+                <input id="password" class="password" type="password" placeholder="Password" name="password" minlength="8" maxlength="20" required>
+            </div>
+
+            <div class="form-input">
+                <label for="confirmPassword">Confirm Password</label>
+                <input id="confirmPassword" class="confirm-password" type="password" placeholder="Confirm Password" name="confirmPassword" minlength="8" maxlength="20" required>
+            </div>
+
+            <div class="sex">
+                <label for="sex1">Select your sex</label>
+                <select id="sex1" class="sex" name="gender">
+                    <option value="None">None</option>
+                    <option value="Male" class="male">Male</option>
+                    <option value="Female" class="female">Female</option>
+                </select>
+            </div>
+            <div class="regButton">
+                <button type="submit">Registration</button>
+            </div>
+
+        </form>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
