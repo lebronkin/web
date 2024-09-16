@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+        }
+        .form-input{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        input[type=submit] {
+            width: 100%;
+            height: 30px;
+            background-color: turquoise;
+        }
+        input[type=submit]:hover {
+            cursor: pointer;
+            background-color: darkcyan;
+        }
+        .submit-input{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<h1>Registration form</h1>
+<form>
+    <div class="form-input">
+        <label for="user-name-input">Enter your name</label>
+        <input id="user-name-input" type="text" placeholder="Name"/>
+    </div>
+
+    <div class="form-input">
+        <label for="password-input">Enter your password</label>
+        <input  id="password-input" type="password" placeholder="Password"/>
+    </div>
+
+    <div class="form-input">
+        <label for="user-type-input">Select your role</label>
+        <select id="user-type-input">
+            <option value="Admin">Admin</option>
+            <option value="Moderator">Moderator</option>
+            <option value="User">User</option>
+        </select>
+    </div>
+</form>
+    <div id="button-container">
+        <button id="submit-input" disabled>Submit button</button>
+        <button id="enable-submit" onclick="enableHandler()">Enable</button>
+        <button id="add-listener" onclick="addListener()">Add listener</button>
+        <button id="disable-submit" onclick="disableHandler()">Disable</button>
+    </div>
+</div>
+    <script type="text/javascript">
+        const button = document.querySelector("#submit-input");
+        const itWorksListener = (event) => {
+            event.preventDefault();
+            console.log("It works");
+        }
+        const divClickHandler = () => {
+            console.log("div clicked", event.target);
+        }
+
+        document.querySelector("#button-container").addEventListener("click", divClickHandler);
+        function enableHandler (){
+            button.disabled = false;
+        }
+
+        function addListener (){
+            button.addEventListener("click", itWorksListener);
+        }
+
+        function disableHandler (){
+            button.disabled = true;
+            button.removeEventListener("click", itWorksListener);
+        }
+
+    </script>
+</body>
+</html>
